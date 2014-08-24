@@ -1,0 +1,128 @@
+{
+    "appKeys": {
+        "dummy": 0
+    },
+    "capabilities": [
+        ""
+    ],
+    "companyName": "ShaBP",
+    "longName": "ModernStep",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "images/modern_logo.png",
+                "menuIcon": true,
+                "name": "IMAGE_MENU_ICON",
+                "type": "png"
+            },
+            {
+                "file": "images/modern minimal 3 background no badge.png",
+                "name": "IMAGE_BACKGROUND_NOBADGE",
+                "type": "png"
+            },
+            {
+                "file": "images/Date Window.png",
+                "name": "IMAGE_DATE_WINDOW",
+                "type": "png"
+            },
+            {
+                "file": "fonts/Roboto-Condensed.ttf",
+                "name": "FONT_ROBOTO_CONDENSED_21",
+                "type": "font"
+            },
+            {
+                "file": "images/bluetooth.png",
+                "name": "BLUETOOTH_CONNECTED",
+                "type": "png"
+            },
+            {
+                "file": "images/modern_background_new.png",
+                "name": "IMAGE_BACKGROUND_BADGE",
+                "type": "png"
+            },
+            {
+                "file": "images/Icon Bluetooth disconnected.png",
+                "name": "BLUETOOTH_DISCONNECTED",
+                "type": "png"
+            },
+            {
+                "file": "images/Icon Battery Charging.png",
+                "name": "ICON_BATTERY_CHARGING",
+                "type": "png"
+            },
+            {
+                "file": "images/Icon Battery 100.png",
+                "name": "ICON_BATTERY_100",
+                "type": "png"
+            },
+            {
+                "file": "images/Icon Battery 90.png",
+                "name": "ICON_BATTERY_90",
+                "type": "png"
+            },
+            {
+                "file": "images/Icon Battery 80.png",
+                "name": "ICON_BATTERY_80",
+                "type": "png"
+            },
+            {
+                "file": "images/Icon Battery 70.png",
+                "name": "ICON_BATTERY_70",
+                "type": "png"
+            },
+            {
+                "file": "images/Icon Battery 60.png",
+                "name": "ICON_BATTERY_60",
+                "type": "png"
+            },
+            {
+                "file": "images/Icon Battery 50.png",
+                "name": "ICON_BATTERY_50",
+                "type": "png"
+            },
+            {
+                "file": "images/Icon Battery 40.png",
+                "name": "ICON_BATTERY_40",
+                "type": "png"
+            },
+            {
+                "file": "images/Icon Battery 30.png",
+                "name": "ICON_BATTERY_30",
+                "type": "png"
+            },
+            {
+                "file": "images/Icon Battery 20.png",
+                "name": "ICON_BATTERY_20",
+                "type": "png"
+            },
+            {
+                "file": "images/Icon Battery 10.png",
+                "name": "ICON_BATTERY_10",
+                "type": "png"
+            },
+            {
+                "file": "images/status1.png",
+                "name": "IMAGE_STATUS_1",
+                "type": "png"
+            },
+            {
+                "file": "images/status2.png",
+                "name": "IMAGE_STATUS_2",
+                "type": "png"
+            },
+            {
+                "file": "images/status3.png",
+                "name": "IMAGE_STATUS_3",
+                "type": "png"
+            }
+        ]
+    },
+    "shortName": "ModernStep",
+    "uuid": "719a8f09-9f4e-459d-af6e-17342b30a21f",
+    "versionCode": 4,
+    "versionLabel": "1.3",
+    "watchapp": {
+        "watchface": true
+    }
+}
