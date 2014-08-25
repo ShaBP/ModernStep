@@ -72,22 +72,33 @@ bool analyzeAcceleration(uint32_t* currentType, Counter* counter, LowPassFilter*
 		// Update time
 		uint32_t timestamp = (uint32_t) time(NULL);
 		uint32_t elapsedTime = timestamp - counter->timestamp;
-
-		switch(*currentType) {
-			case 0:
-				counter->sleepTime += elapsedTime;
-				break;
-			case 1:
-				counter->sitTime += elapsedTime;
-				break;
-			case 2:
-				counter->walkTime += elapsedTime;
-				break;
-			case 3:
-				counter->jogTime += elapsedTime;
-				break;
+//    char logString[32];
+    if (timestamp/86400 > counter->timestamp/86400){ // it's a new day (86400sec make a day)
+      counter->steps = 0;
+      counter->sleepTime = 0;
+      counter->sitTime = 0;
+      counter->walkTime = 0;
+      counter->jogTime = 0;
+    }
+    else{
+		  switch(*currentType) {
+			  case 0:
+				  counter->sleepTime += elapsedTime;
+				  break;
+			  case 1:
+				  counter->sitTime += elapsedTime;
+				  break;
+			  case 2:
+				  counter->walkTime += elapsedTime;
+				  break;
+			  case 3:
+				  counter->jogTime += elapsedTime;
+				  break;
+      }
 		}
 		counter->timestamp = timestamp;
+    //snprintf(logString,32,"timestamp=%d, elapsedTime=%d",(int)timestamp,(int)elapsedTime);
+    //app_log(APP_LOG_LEVEL_INFO,"Timestamp",0,logString);
 
 		// Count steps
 		uint32_t steps = 0;
@@ -111,7 +122,7 @@ bool analyzeAcceleration(uint32_t* currentType, Counter* counter, LowPassFilter*
 				}
 			}
 			steps /= 2;
-			counter->steps += steps;
+		  counter->steps += steps;
 		}
 
 		mDataSize = 0;

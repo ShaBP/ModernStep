@@ -40,7 +40,9 @@ static TextLayer *event_layer2; // from ModernCalendar
 // Week Text status
 static TextLayer *steps_layer;
 static char steps_text[] = "steps: 99999";
+//static BitmapLayer *sit_icon_layer;
 static TextLayer *sit_layer;
+//static GBitmap *sit_icon_bitmap;
 static char sit_text[] = "s99:99";
 static TextLayer *walk_layer;
 static char walk_text[] = "w99:99";
@@ -95,7 +97,7 @@ static bool badge = false;
 
 // On11 Config
 static bool mIsDriving = false;
-static int32_t mPedometerSensitivity = 10;	// Range: [0, 100]
+static int32_t mPedometerSensitivity = 15;	// Range: [0, 100]
 
 // On11 Classification
 static LowPassFilter mFilter;
@@ -418,6 +420,7 @@ void deinit() {
 	bitmap_layer_destroy(bt_layer);
 	gbitmap_destroy(icon_bt_connected);
 	gbitmap_destroy(icon_bt_disconnected);
+//  gbitmap_destroy(sit_icon_bitmap);
 //	bitmap_layer_destroy(date_window_layer);
 //	gbitmap_destroy(image_date_window);
 	text_layer_destroy(date_layer);
@@ -427,6 +430,7 @@ void deinit() {
   text_layer_destroy(jog_layer);
 //  text_layer_destroy(week_layer);
 	layer_destroy(hands_layer);
+//  bitmap_layer_destroy(sit_icon_layer);
 	gpath_destroy(minute_hand);
 	gpath_destroy(hour_hand);
 	gbitmap_destroy(background_image);
@@ -495,16 +499,23 @@ void init() {
   // sit layer
   sit_layer = text_layer_create(GRect(1, 110, 48, 20));
   text_layer_set_text_color(sit_layer, GColorWhite);
-	text_layer_set_text_alignment(sit_layer, GTextAlignmentLeft);
+	text_layer_set_text_alignment(sit_layer, GTextAlignmentCenter);
   text_layer_set_background_color(sit_layer, GColorClear);
   text_layer_set_font(sit_layer, fonts_get_system_font(FONT_KEY_GOTHIC_18));
 	layer_add_child(window_layer, text_layer_get_layer(sit_layer));
 	layer_set_hidden(text_layer_get_layer(sit_layer), true);
+  /*
+  sit_icon_bitmap = gbitmap_create_with_resource(RESOURCE_ID_SIT_ICON);
+  sit_icon_layer = bitmap_layer_create(GRect(1, 110, 18, 19));
+  bitmap_layer_set_bitmap(sit_icon_layer, sit_icon_bitmap);
+  layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(sit_icon_layer));
+	layer_set_hidden(bitmap_layer_get_layer(sit_icon_layer), true);
+  */
 
   // walk layer
   walk_layer = text_layer_create(GRect(48, 110, 48, 20));
   text_layer_set_text_color(walk_layer, GColorWhite);
-	text_layer_set_text_alignment(walk_layer, GTextAlignmentLeft);
+	text_layer_set_text_alignment(walk_layer, GTextAlignmentCenter);
   text_layer_set_background_color(walk_layer, GColorClear);
   text_layer_set_font(walk_layer, fonts_get_system_font(FONT_KEY_GOTHIC_18));
 	layer_add_child(window_layer, text_layer_get_layer(walk_layer));
@@ -513,7 +524,7 @@ void init() {
   // jog layer
   jog_layer = text_layer_create(GRect(96, 110, 48, 22));
   text_layer_set_text_color(jog_layer, GColorWhite);
-	text_layer_set_text_alignment(jog_layer, GTextAlignmentLeft);
+	text_layer_set_text_alignment(jog_layer, GTextAlignmentCenter);
   text_layer_set_background_color(jog_layer, GColorClear);
   text_layer_set_font(jog_layer, fonts_get_system_font(FONT_KEY_GOTHIC_18));
 	layer_add_child(window_layer, text_layer_get_layer(jog_layer));
@@ -661,7 +672,7 @@ void init() {
   //calendar_init();
 
   // Show status screen on init (comment out to have battery and bluetooth status hidden at init)
-	// show_status();
+	//show_status();
  		
 }
 

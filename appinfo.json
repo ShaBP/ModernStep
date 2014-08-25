@@ -11,6 +11,21 @@
     "resources": {
         "media": [
             {
+                "file": "images/Run_16x19.png",
+                "name": "RUN_ICON",
+                "type": "png"
+            },
+            {
+                "file": "images/Walk_16x19.png",
+                "name": "WALK_ICON",
+                "type": "png"
+            },
+            {
+                "file": "images/Sit_18x19.png",
+                "name": "SIT_ICON",
+                "type": "png"
+            },
+            {
                 "file": "images/modern_logo.png",
                 "menuIcon": true,
                 "name": "IMAGE_MENU_ICON",
